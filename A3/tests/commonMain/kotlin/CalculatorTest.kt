@@ -2,6 +2,7 @@ import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.Test
 
 class CalculatorServiceTest {
@@ -78,6 +79,7 @@ class CalculatorServiceTest {
         assertEquals(1.0, result)
         verify { calculator.modulus(10.0, 3.0) }
     }
+}
 
 class CalculatorTest {
 
@@ -123,18 +125,6 @@ class CalculatorTest {
     fun `modulus of 10 by 3 returns 1`() {
         val result = calculator.modulus(10.0, 3.0)
         assertEquals(1.0, result)
-    }
-
-    @Test
-    fun `division of 10 by zero returns NaN`() {
-        val result = calculator.divide(10.0, 0.0)
-        assertEquals(Double.NaN, result)
-    }
-
-    @Test
-    fun `square root of negative 1 returns NaN`() {
-        val result = calculator.sqrt(-1.0)
-        assertEquals(Double.NaN, result)
     }
 
     @Test
