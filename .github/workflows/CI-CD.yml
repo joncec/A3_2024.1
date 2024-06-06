@@ -54,7 +54,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm run test:${{ matrix.test }}
 
-    versions:
+  versions:
       if: github.ref == 'refs/heads/release' # Este trabalho é executado se a referência do GitHub for 'refs/heads/release'
       runs-on: ubuntu-latest
       steps:
