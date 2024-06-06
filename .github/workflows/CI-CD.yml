@@ -2,9 +2,9 @@ name: CI/CD_Pipeline
 
 on:
   push:
-    branches: [main, release, dev] # Branches que acionam o pipeline quando ocorre um push
+    branches: [main, release, development] # Branches que acionam o pipeline quando ocorre um push
   pull_request:
-    branches: [main, release, dev] # Branches que acionam o pipeline quando ocorre um pull request
+    branches: [main, release, development] # Branches que acionam o pipeline quando ocorre um pull request
 
 jobs:
   preflight:
