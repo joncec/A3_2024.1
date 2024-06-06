@@ -1,4 +1,4 @@
-rootProject.name = "KotlinProject"
+rootProject.name = "A3_2024.1"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {

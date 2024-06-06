@@ -60,8 +60,8 @@ jobs:
       steps:
         - uses: actions/checkout@v4
         - name: Set up shell script permissions
-          run: chmod +x ./numero-secreto/generate_version.sh # Executa o comando para configurar as permissões do script shell
+          run: chmod +x ./A3_2024.1/generate_version.sh # Executa o comando para configurar as permissões do script shell
         - name: Generate version
-          run: ./numero-secreto/generate_version.sh true # Executa o script para gerar a versão
+          run: ./A3_2024.1/generate_version.sh true # Executa o script para gerar a versão
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
