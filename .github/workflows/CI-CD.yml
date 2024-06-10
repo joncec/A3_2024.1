@@ -13,15 +13,14 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           echo "Validating commit messages..."
-          REGEX="^((Merge[ a-z-]* branch.*)|(Revert*)|((build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\(.*\))?!?: .*))"
-          FILE=`cat $1` # File containing the commit message
-          echo "Commit Message: ${FILE}"
-          if ! [[ $FILE =~ $REGEX ]]; then
-            echo >&2 "ERROR: Commit aborted for not following the Conventional Commit standard.​"
-            exit 1
-          else
-            echo >&2 "Valid commit message."
-          fi
+          REGEX="^((Merge.*)|(Revert.*)|((build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\(.*\))?!?: .*))"
+          COMMIT_MSGS=$(git log --format=%B 8ef964bc85f3a644991ffa84762ead8ef0b89988..1a454c4eb7f398c7b55b6b740fd5d110ab5558b1)
+          echo "$COMMIT_MSGS" | while read -r COMMIT_MSG; do
+            if ! echo "$COMMIT_MSG" | grep -Eq "$REGEX"; then
+              echo "Commit message does not follow the convention: $COMMIT_MSG"
+              exit 1
+            fi
+          done
 
   build:
     runs-on: ubuntu-latest
