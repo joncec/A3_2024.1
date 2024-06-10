@@ -14,7 +14,6 @@ jobs:
       - run: |
           echo "Validating commit messages..."
           REGEX="^((Merge.*)|(Revert.*)|((build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\(.*\))?!?: .*))"
-          COMMIT_MSGS=$(git log --format=%B ${{ github.event.before }}..${{ github.event.after }})
           echo "$COMMIT_MSGS" | while read -r COMMIT_MSG; do
             if ! echo "$COMMIT_MSG" | grep -Eq "$REGEX"; then
               echo "Commit message does not follow the convention: $COMMIT_MSG"
