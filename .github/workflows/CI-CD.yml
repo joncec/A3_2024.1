@@ -32,7 +32,7 @@ jobs:
           distribution: oracle
           java-version: 17
           cache: gradle
-      - run: ./gradlew test
+      - run: ./gradle test
 
   test:
     needs: build
