@@ -41,7 +41,7 @@ jobs:
            arguments: test
       - name: Run tests 
         run: ./gradlew test
-        working-directory: .
+        working-directory: ./A3_2024.1/A3
 
   test:
     needs: build
