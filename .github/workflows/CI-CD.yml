@@ -35,22 +35,24 @@ jobs:
           distribution: oracle
           java-version: 17
 
-      - name: Setup Gradle
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
           path: ./A3
 
-      - uses: gradle/gradle-build-action@v2
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
         with:
           gradle-version: 8.7
           arguments: test
-          working-directory: ./A3
+          project-dir: ./A3
 
       - name: Run tests
         run: |
           ./gradlew build
           ./gradlew test
         working-directory: ./A3
+
 
 
   test:
