@@ -29,11 +29,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
       - name: Configurar ambiente Android
         uses: android-actions/setup-android@v2
+        run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
 
       - name: Setup Java and Gradle
         uses: actions/setup-java@v2
