@@ -32,6 +32,9 @@ jobs:
       - name: Configurar ambiente Android
         uses: android-actions/setup-android@v2
 
+      - name: Atualizar Android SDK
+        run: $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --updat
+
       - name: Aceitar todas as licenças do Android SDK
         run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
 
