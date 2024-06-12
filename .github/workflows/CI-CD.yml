@@ -31,6 +31,8 @@ jobs:
 
       - name: Configurar ambiente Android
         uses: android-actions/setup-android@v2
+
+      - name: Aceitar todas as licenças do Android SDK
         run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
 
       - name: Setup Java and Gradle
