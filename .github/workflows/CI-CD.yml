@@ -45,7 +45,7 @@ jobs:
         with:
           gradle-version: 8.7
           arguments: test
-          project-dir: ./A3
+          working-directory: ./A3
 
       - name: Run tests
         run: |
