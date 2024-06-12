@@ -29,11 +29,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Setup Java and Gradle
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          distribution: 'oracle'
+          distribution: 'temurin'
           gradle-version: '8.7'
 
       - name: Run Gradle
