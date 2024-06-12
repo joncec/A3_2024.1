@@ -39,12 +39,13 @@ jobs:
           distribution: 'temurin'
           gradle-version: '8.7'
 
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+        working-directory: ./A3
+
       - name: Run Gradle
         run: ./gradlew test
         working-directory: ./A3
-
-
-
 
   test:
     needs: build
