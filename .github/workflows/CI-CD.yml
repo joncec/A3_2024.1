@@ -29,29 +29,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Java
-        uses: actions/setup-java@v4
+      - name: Setup Java and Gradle
+        uses: actions/setup-java@v2
         with:
-          distribution: oracle
-          java-version: 17
+          java-version: '11'
+          distribution: 'oracle'
+          gradle-version: '8.7'
 
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          path: ./A3
-
-      - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
-        with:
-          gradle-version: 8.7
-          arguments: test
-          working-directory: ./A3
-
-      - name: Run tests
-        run: |
-          ./gradlew build
-          ./gradlew test
+      - name: Run Gradle
+        run: ./gradlew test
         working-directory: ./A3
+
 
 
 
