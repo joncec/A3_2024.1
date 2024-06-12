@@ -1,6 +1,6 @@
 @file:OptIn(org.jetbrains.compose.resources.InternalResourceApi::class)
 
-package kotlinproject.composeapp.generated.resources
+package a3_2024_1.composeapp.generated.resources
 
 import kotlin.OptIn
 import org.jetbrains.compose.resources.DrawableResource
@@ -18,6 +18,6 @@ private fun init_compose_multiplatform(): DrawableResource =
   "drawable:compose_multiplatform",
     setOf(
       org.jetbrains.compose.resources.ResourceItem(setOf(),
-    "composeResources/kotlinproject.composeapp.generated.resources/drawable/compose-multiplatform.xml", -1, -1),
+    "composeResources/a3_2024_1.composeapp.generated.resources/drawable/compose-multiplatform.xml", -1, -1),
     )
 )

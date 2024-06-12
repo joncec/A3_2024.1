@@ -3,7 +3,7 @@
   org.jetbrains.compose.resources.ExperimentalResourceApi::class,
 )
 
-package kotlinproject.composeapp.generated.resources
+package a3_2024_1.composeapp.generated.resources
 
 import kotlin.ByteArray
 import kotlin.OptIn
@@ -23,7 +23,7 @@ internal object Res {
    */
   @ExperimentalResourceApi
   public suspend fun readBytes(path: String): ByteArray =
-      readResourceBytes("composeResources/kotlinproject.composeapp.generated.resources/" + path)
+      readResourceBytes("composeResources/a3_2024_1.composeapp.generated.resources/" + path)
 
   /**
    * Returns the URI string of the resource file at the specified path.
@@ -35,7 +35,7 @@ internal object Res {
    */
   @ExperimentalResourceApi
   public fun getUri(path: String): String =
-      getResourceUri("composeResources/kotlinproject.composeapp.generated.resources/" + path)
+      getResourceUri("composeResources/a3_2024_1.composeapp.generated.resources/" + path)
 
   public object drawable
 

@@ -21,7 +21,7 @@ public class RootProjectAccessor extends TypeSafeProjectDependencyFactory {
     /**
      * Creates a project dependency on the project at path ":"
      */
-    public KotlinProjectProjectDependency getKotlinProject() { return new KotlinProjectProjectDependency(getFactory(), create(":")); }
+    public A320241ProjectDependency getA320241() { return new A320241ProjectDependency(getFactory(), create(":")); }
 
     /**
      * Creates a project dependency on the project at path ":composeApp"
