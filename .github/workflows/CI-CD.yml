@@ -39,6 +39,10 @@ jobs:
           distribution: 'temurin'
           gradle-version: '8.7'
 
+      - name: Aceitar licenças do Android SDK
+        run: yes | sdkmanager --licenses
+        working-directory: ./A3
+
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
         working-directory: ./A3
