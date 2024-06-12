@@ -28,6 +28,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
@@ -35,15 +36,22 @@ jobs:
           java-version: 17
 
       - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
+      - uses: actions/checkout@v2
         with:
-           gradle-version: 8.7
-           arguments: test
-      - name: Run tests 
+          path: ./A3
+
+      - uses: gradle/gradle-build-action@v2
+        with:
+          gradle-version: 8.7
+          arguments: test
+          working-directory: ./A3
+
+      - name: Run tests
         run: |
           ./gradlew build
           ./gradlew test
         working-directory: ./A3
+
 
   test:
     needs: build
