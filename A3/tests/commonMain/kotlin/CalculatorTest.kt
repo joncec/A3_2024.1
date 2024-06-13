@@ -81,6 +81,35 @@ class CalculatorServiceTest {
     }
 }
 
+class IntegrationTest {
+
+    @Test
+    fun `test calculator service with real calculator`() {
+        // Arrange
+        val calculator = Calculator() // real calculator
+        val calculatorService = CalculatorService(calculator) // real service
+
+        // Act
+        val result = calculatorService.performAddition(2.0, 3.0)
+
+        // Assert
+        assertEquals(5.0, result)
+    }
+
+    @Test
+    fun `test calculator service with mocked calculator`() {
+        // Arrange
+        val calculator = mockk<Calculator>() // mocked calculator
+        every { calculator.add(2.0, 3.0) } returns 5.0
+        val calculatorService = CalculatorService(calculator) // real service
+
+        // Act
+        val result = calculatorService.performAddition(2.0, 3.0)
+
+        // Assert
+        assertEquals(5.0, result)
+    }
+
 class CalculatorTest {
 
     private val calculator = Calculator()
