@@ -53,6 +53,7 @@ jobs:
         run: |
           mkdir -p $ANDROID_HOME/licenses
           echo -e "\n24333f8a63b6825ea9c5514f83c2829b004d1fee" > $ANDROID_HOME/licenses/android-sdk-license
+          echo -e "\nd975f751698a77b662f1254ddbeed3901e976f5a" > $ANDROID_HOME/licenses/intel-android-extra-license
 
       - name: Aceitar todas as licenças do Android SDK
         run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
@@ -60,6 +61,11 @@ jobs:
       - name: Aceitar todas as licenças do Android SDK
         run: |
           yes | sdkmanager --licenses
+
+      - name: Verificar licenças
+        run: |
+          echo %ANDROID_HOME%
+          ls -la $ANDROID_HOME/licenses/
 
       - name: Run Gradle
         run: ./gradlew test
