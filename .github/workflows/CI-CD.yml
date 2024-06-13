@@ -57,6 +57,10 @@ jobs:
       - name: Aceitar todas as licenças do Android SDK
         run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
 
+      - name: Aceitar todas as licenças do Android SDK
+        run: |
+          yes | sdkmanager --licenses
+
       - name: Run Gradle
         run: ./gradlew test
         working-directory: ./A3
