@@ -45,7 +45,6 @@ jobs:
 
       - name: Atualizar Android SDK
         run: |
-          echo y | $ANDROID_HOME/tools/bin/sdkmanager "build-tools;34.0.0
           $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --update
 
       - name: Instalar Android SDK Build-Tools e aceitar licenças
